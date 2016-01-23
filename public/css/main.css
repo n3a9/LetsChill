@@ -1,0 +1,98 @@
+#content {
+    background: url(http://res.cloudinary.com/dz9yrk0yr/image/upload/v1453532137/blurred-city-lights-widescreen_wallpaper_lthfds.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0 !important; 
+}
+
+#login-container {
+    z-index: 1 !important;
+    border-radius: 40px;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    padding-bottom: 6em;
+    
+}
+
+#logo {
+    margin-top: 2.7em;
+    z-index: 2 !important;
+    font-family: 'Molengo', sans-serif;
+    font-size: 100px; 
+
+    
+    
+}
+
+#login-container label {
+ 
+margin-left: 5%; 
+ 
+ font-size: 25px;
+
+}
+
+#email {
+
+    font-size: 2em;
+    width: 90%;
+    
+    
+}
+
+ /* label color */
+   .input-field label {
+     color: white;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+
+/* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: white;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+
+   /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: white;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+
+
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
