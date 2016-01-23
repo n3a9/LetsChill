@@ -22,13 +22,47 @@
             padding: 0;
             }
         #map {
-            height: 100%;
+            height: 50%;
         }
         </style>
     </head>
     
     <body>
         <div id="map"></div>
+            <form action="">
+                <input class= "checkitem" type="checkbox" name="amusement_park" onclick="checkedUpdate()"> Amusement Park<br>
+                <input class= "checkitem" type="checkbox" name="aquarium" onclick="checkedUpdate()"> Aquarium<br>
+                <input class= "checkitem" type="checkbox" name="bank" onclick="checkedUpdate()"> Bank<br>
+                <input class= "checkitem" type="checkbox" name="bowling_alley" onclick="checkedUpdate()"> Bowling Alley<br>
+                <input class= "checkitem" type="checkbox" name="cafe" onclick="checkedUpdate()"> Cafe<br>
+                <input class= "checkitem" type="checkbox" name="food" onclick="checkedUpdate()"> Food<br>
+                <input class= "checkitem" type="checkbox" name="gym" onclick="checkedUpdate()"> Gym<br>
+                <input class= "checkitem" type="checkbox" name="movie_theatre" onclick="checkedUpdate()"> Movie Theatre<br>
+                <input class= "checkitem" type="checkbox" name="restaurant" onclick="checkedUpdate()"> Restaurant<br>
+                <input class= "checkitem" type="checkbox" name="shopping_mall" onclick="checkedUpdate()"> Shopping Mall<br>
+                <input class= "checkitem" type="checkbox" name="spa" onclick="checkedUpdate()"> Spa<br>
+                <input class= "checkitem" type="checkbox" name="zoo" onclick="checkedUpdate()"> Zoo<br>
+            </form>
+
     </body>
+    
+    <script>
+        $(document).ready(function() {
+            var makeRadiosDeselectableByName = function(name){
+                $('input[name=' + name + ']').click(function() {
+                    if($(this).attr('previousValue') == 'true'){
+                        $(this).attr('checked', false)
+                    } else {
+                        $('input[name=' + name + ']').attr('previousValue', false);
+                    }
+        
+                    $(this).attr('previousValue', $(this).attr('checked'));
+                });
+            };
+
+
+            makeRadiosDeselectableByName('foo');
+        });
+    </script>
 
 </html>

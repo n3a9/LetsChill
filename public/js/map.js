@@ -124,7 +124,7 @@ function initMap() {
         center: midpointCoords,
         zoom: 15
     });
-
+    
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
@@ -150,7 +150,6 @@ function initMaptwo() {
         location: midpointCoords,
         radius: 500
     }, callback);
-    
 }
 
 function callback(results, status) {
@@ -194,4 +193,38 @@ function getMidpoint(lat1, lng1, lat2, lng2) {
     lat3 = Math.atan2(Math.sin(lat1) + Math.sin(lat2), Math.sqrt((Math.cos(lat1) + bx) * (Math.cos(lat1) + bx) + Math.pow(by, 2)));
     lon3 = lng1 + Math.atan2(by, Math.cos(lat1) + bx);
     return [Math.round(Math.degrees(lat3), 5), Math.round(Math.degrees(lon3), 5)]
+}
+
+function checkedUpdate() {
+    // Retrieve the checked radiobuttons
+    var checkedArr = [];
+    
+    var checkItems = $('.checkitem');
+    
+    for (var i = 0; i < checkItems.size(); i++) {
+        if (checkItems[i].checked == true){
+            console.log(checkItems[i].name);
+        }
+    }
+    
+    var midpoint = localStorage.getItem("mdpt")
+    var n = midpoint.indexOf(",");
+    var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
+    
+    console.log(midpointCoords);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: midpointCoords,
+        zoom: 15
+    });
+
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: midpointCoords,
+        radius: 500,
+        types: checkedArr
+        
+    }, callback);
+    
+    
 }
