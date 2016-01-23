@@ -12,10 +12,7 @@ var lat1;
 var lon1;
 var lat2;
 var lon2;
-<<<<<<< HEAD
 var markers = [];
-=======
->>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
 
 function submitLocations(){
     if (input1.value==""||input2.value=="")
@@ -121,11 +118,7 @@ function initMap() {
 
     });
     
-<<<<<<< HEAD
     var midpoint = getMidpoint(lat1, lon1, lat2, lon2);
-=======
-    var midpoint = getMidpoint(lat1, lon1, lat2, lon2)
->>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
     var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -142,11 +135,7 @@ function initMap() {
 }
 
 function initMaptwo() {
-<<<<<<< HEAD
     var midpoint = localStorage.getItem("mdpt");
-=======
-    var midpoint = localStorage.getItem("mdpt")
->>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
     var n = midpoint.indexOf(",");
     var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
     
@@ -188,7 +177,6 @@ function createMarker(place) {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
     });
-<<<<<<< HEAD
     markers.push(marker);
 }
 
@@ -199,8 +187,6 @@ function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(map);
     }
-=======
->>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
 }
         
 function getMidpoint(lat1, lng1, lat2, lng2) {
@@ -220,7 +206,7 @@ function getMidpoint(lat1, lng1, lat2, lng2) {
     lon3 = lng1 + Math.atan2(by, Math.cos(lat1) + bx);
     return [Math.degrees(lat3), Math.degrees(lon3)]
 }
-<<<<<<< HEAD
+
 function checkedUpdate() {
     // Retrieve the checked radiobuttons
     var checkedArr = [];
@@ -253,5 +239,3 @@ function checkedUpdate() {
     }, callback);
     
 }
-=======
->>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
