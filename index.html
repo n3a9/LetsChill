@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="app">
 
-<head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css" media="screen,projection" />
-    <!--Main.css--> 
-    <link type="text/css" rel="stylesheet" href="public/css/main.css" /> 
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css" media="screen,projection" />
+        <!--Main.css--> 
+        <link type="text/css" rel="stylesheet" href="public/css/main.css" />
+        <!--Capture Viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Google Maps API-->
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <!-- fonts --> 
+        <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+    </head>
 
-    <!--Let browser know website is optimized for mobile-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-    
-    <!--Google Maps API-->
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    
-    
-    <!-- FONTS --> 
-    
-    <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
-    
-</head>
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="public/js/materialize.min.js"></script>
 
-<body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="public/js/materialize.min.js"></script>
-
-    <div id="wrapper">
-       <h1 id="logo" class="white-text center">LetsChill</h1>
-        <div id="login-container">
-        
-        <br><br><br>
-                   
+        <div id="wrapper">
+           <h1 id="logo" class="white-text center">LetsChill</h1>
+            <div id="login-container">
+            <br><br><br>
                     <form class="col s12">
                         <div class="row center">
                             <div class="input-field col s12">
@@ -41,8 +33,6 @@
                             </div>
                         </div>
                     </form>
-                    
-                        
                     <form class="col s12">
                         <div class="row center">
                             <div class="input-field col s12 center">
@@ -51,17 +41,11 @@
                             </div>
                         </div>
                     </form>
-   
+            </div>
+        </div>
 
-    </div>
-    </div>
-    
-    
-    
-    
-    <!--App.js Hookup-->
-    <script type="text/javascript" src="public/app/app.js"></script>
-    
-</body>
+        <script type="text/javascript" src="public/app/app.js"></script>
+
+    </body>
 
 </html>
