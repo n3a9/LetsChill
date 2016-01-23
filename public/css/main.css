@@ -1,3 +1,6 @@
+
+/*BASIC SETUP*/
+
 html {
     background: url(http://res.cloudinary.com/dz9yrk0yr/image/upload/v1453532137/blurred-city-lights-widescreen_wallpaper_lthfds.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -7,16 +10,25 @@ html {
     z-index: 0 !important;
 }
 
-#wrapper{
+#map {
+    visibility: hidden;
+}
+
+#wrapper {
     margin-top: 4em;
     margin-bottom: auto;
 }
 
+#logo {
+    display: inline-block;
+    font-family: 'Molengo', sans-serif;
+    font-size: 100px;
+}
+
 #wrapper img {
     display: inline-block;
-    /*margin:auto;*/
-    max-height: 10%;
-    max-width: 10%;
+    max-height: 100px;
+    max-width: 100px;
     margin-bottom: -1em;
 }
 
@@ -31,12 +43,6 @@ html {
     padding-bottom: 2em;
 }
 
-#logo {
-    display: inline-block;
-    font-family: 'Molengo', sans-serif;
-    font-size: 100px;
-}
-
 #login-container label {
     margin-left: 5%; 
     font-size: 25px;
@@ -44,71 +50,75 @@ html {
 
 #autocomplete1, #autocomplete2 {
     font-size: 2em;
-    width: 90%;
-    
+    width: 90%;  
 }
 
- /* label color */
-   .input-field label {
-     color: white;
-   }
-   /* label focus color */
-   .input-field input[type=email]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=email]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
+/*TEXT HANDLING AND COLORS*/
 
+/* label color */
+.input-field label {
+    color: white;
+}
 
 /* label focus color */
-   .input-field input[type=email]:focus + label {
-     color: white;
-   }
-   /* label underline focus color */
-   .input-field input[type=email]:focus {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   }
+.input-field input[type=email]:focus + label {
+    color: #000;
+}
 
-   /* label focus color */
-   .input-field input[type=password]:focus + label {
-     color: white;
-   }
-   /* label underline focus color */
-   .input-field input[type=password]:focus {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   }
+/* label underline focus color */
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #000; box-shadow: 0 1px 0 0 #000;
+}
 
+/* label focus color */
+.input-field input[type=email]:focus + label {
+    color: white;
+}
 
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
+/* label underline focus color */
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
 
+/* label focus color */
+.input-field input[type=password]:focus + label {
+    color: white;
+}
+
+/* label underline focus color */
+.input-field input[type=password]:focus {
+   border-bottom: 1px solid white;
+   box-shadow: 0 1px 0 0 white;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+
+/*HIDE 'POWERED BY GOOGLE' TAG*/
 .pac-container:after {
-    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
-
     background-image: none !important;
     height: 0px;
 }
 
+/*OPTIMIZE FOR MOBILE*/ 
 @media only screen and (max-width : 380px) {
     #logo {
-        font-size: 75px;
+        font-size: 60px;
     }  
     
     #login-container {
