@@ -12,6 +12,7 @@ var lat1;
 var lon1;
 var lat2;
 var lon2;
+var markers = [];
 
 function submitLocations(){
     if (input1.value==""||input2.value=="")
@@ -117,14 +118,14 @@ function initMap() {
 
     });
     
-    var midpoint = getMidpoint(lat1, lon1, lat2, lon2)
+    var midpoint = getMidpoint(lat1, lon1, lat2, lon2);
     var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: midpointCoords,
         zoom: 15
     });
-    
+
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
@@ -134,7 +135,7 @@ function initMap() {
 }
 
 function initMaptwo() {
-    var midpoint = localStorage.getItem("mdpt")
+    var midpoint = localStorage.getItem("mdpt");
     var n = midpoint.indexOf(",");
     var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
     
@@ -150,6 +151,7 @@ function initMaptwo() {
         location: midpointCoords,
         radius: 500
     }, callback);
+    
 }
 
 function callback(results, status) {
@@ -175,6 +177,16 @@ function createMarker(place) {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
     });
+    markers.push(marker);
+}
+
+function clearMarkers() {
+    setMapOnAll(null);
+}
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
 }
         
 function getMidpoint(lat1, lng1, lat2, lng2) {
@@ -192,9 +204,8 @@ function getMidpoint(lat1, lng1, lat2, lng2) {
     by = Math.cos(lat2) * Math.sin(lng - lng1);
     lat3 = Math.atan2(Math.sin(lat1) + Math.sin(lat2), Math.sqrt((Math.cos(lat1) + bx) * (Math.cos(lat1) + bx) + Math.pow(by, 2)));
     lon3 = lng1 + Math.atan2(by, Math.cos(lat1) + bx);
-    return [Math.round(Math.degrees(lat3), 5), Math.round(Math.degrees(lon3), 5)]
+    return [Math.degrees(lat3), Math.degrees(lon3)]
 }
-
 function checkedUpdate() {
     // Retrieve the checked radiobuttons
     var checkedArr = [];
@@ -203,10 +214,10 @@ function checkedUpdate() {
     
     for (var i = 0; i < checkItems.size(); i++) {
         if (checkItems[i].checked == true){
-            console.log(checkItems[i].name);
+            checkedArr.push(checkItems[i].name);
         }
     }
-    
+    console.log(checkedArr);
     var midpoint = localStorage.getItem("mdpt")
     var n = midpoint.indexOf(",");
     var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
@@ -217,14 +228,13 @@ function checkedUpdate() {
         center: midpointCoords,
         zoom: 15
     });
-
+    clearMarkers();
+    
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
         radius: 500,
         types: checkedArr
-        
     }, callback);
-    
     
 }
