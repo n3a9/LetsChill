@@ -5,7 +5,7 @@
 var map;
 var infowindow;
 
-function submitLocations(){
+function submitLocations() {
     window.location.href = "results.html";
 }
 
@@ -15,10 +15,13 @@ function initMap() {
     var lon1 = 150;
     var lat2 = -34;
     var lon2 = 151;
-    
+
     var midpoint = getMidpoint(lat1, lon1, lat2, lon2)
-    var midpointCoords = {lat: -33.867, lng: 151.195};
-    
+    var midpointCoords = {
+        lat: -33.867,
+        lng: 151.195
+    };
+
     console.log(midpoint);
 
     // Adds AutoComplete for input
@@ -26,14 +29,16 @@ function initMap() {
         center: midpointCoords,
         zoom: 15
     });
-    
+
     var input1 = document.getElementById('autocomplete1');
-    
-    
+
+
+
+
     var autocomplete1 = new google.maps.places.Autocomplete(input1);
-    
+
     var input2 = document.getElementById('autocomplete2');
-    
+
     var autocomplete2 = new google.maps.places.Autocomplete(input2);
 
     infowindow = new google.maps.InfoWindow();
@@ -44,13 +49,16 @@ function initMap() {
         radius: 500,
         types: ['store']
     }, callback);
+
+
 }
+
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
-//            console.log(results[i]);
+            //            console.log(results[i]);
             console.log(results[i].name); //get name
             console.log(results[i].vicinity);
             console.log(results[i].types);
@@ -65,17 +73,17 @@ function createMarker(place) {
         position: place.geometry.location
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function () {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
     });
 }
-        
+
 function getMidpoint(lat1, lng1, lat2, lng2) {
-    Math.degrees = function(rad) {
+    Math.degrees = function (rad) {
         return rad * (180 / Math.PI);
     }
-    Math.radians = function(deg) {
+    Math.radians = function (deg) {
         return deg * (Math.PI / 180);
     }
     lat1 = Math.radians(lat1);
