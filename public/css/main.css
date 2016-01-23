@@ -1,0 +1,221 @@
+/*BASIC SETUP*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+html {
+    background: url(http://res.cloudinary.com/dz9yrk0yr/image/upload/v1453532137/blurred-city-lights-widescreen_wallpaper_lthfds.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0 !important;
+}
+
+#map {
+    visibility: hidden;
+}
+
+#wrapper {
+    margin-top: 4em;
+    margin-bottom: auto;
+}
+
+#logo {
+    display: inline-block;
+    font-family: 'Molengo', sans-serif;
+    font-size: 100px;
+}
+
+#wrapper img {
+    display: inline-block;
+    max-height: 100px;
+    max-width: 100px;
+    margin-bottom: -1em;
+}
+
+#login-container {
+    width: 70%;
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 50%;
+    padding-bottom: 2em;
+}
+
+#login-container label {
+    margin-left: 5%;
+    font-size: 25px;
+}
+
+#autocomplete1,
+#autocomplete2 {
+    font-size: 2em;
+    width: 90%;
+}
+
+.page-footer {
+    background-color: rgba(0, 0, 0, 0) !important;
+    height: 6em;
+}
+
+.footer-btn {
+    display: inline-block;
+    height: 2.5em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#teamwrapper{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: .5em;
+}
+
+#teamwrapper h1{
+    font-size: 19pt;
+    text-align: center;
+}
+
+#teamwrapper h3{
+    text-align: center;
+    margin-left: .5em;
+    font-size: 13pt;
+}
+
+
+#teamwrapper h4{
+        width:90%;
+    text-align: center;
+    font-size: 13pt;
+    margin-top: 2em;
+}
+
+#teamwrapper p{
+    font-size: 10pt;
+}
+
+#teamwrapper a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#personleft {
+    width: 50%;
+    float: left;
+    display: inline-block;
+}
+
+#personright {
+    width: 50%;
+    float: right;
+    display: inline-block;
+}
+
+.circle {
+    
+    height: 15em !important;
+    
+}
+
+
+/*TEXT HANDLING AND COLORS*/
+
+
+/* label color */
+
+.input-field label {
+    color: white;
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus + label {
+    color: #000;
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus + label {
+    color: white;
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+
+
+/* valid color */
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid green;
+    box-shadow: 0 1px 0 0 green;
+}
+
+
+/* invalid color */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: #000;
+}
+
+
+/*HIDE 'POWERED BY GOOGLE' TAG*/
+
+.pac-container:after {
+    background-image: none !important;
+    height: 0px;
+}
+
+
+/*OPTIMIZE FOR MOBILE*/
+
+@media only screen and (max-width: 380px) {
+    #logo {
+        font-size: 60px;
+    }
+    #login-container {
+        width: 90%;
+    }
+    #personleft, #personright {
+        width:90%;
+    }
+
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507

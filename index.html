@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LetsChill</title>
+
+    <!--CSS, Icons, and Fonts-->
+    <link rel="icon" href="public/img/icon.png">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css" media="screen,projection" />
+    <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/font-awesome-4.5.0/css/font-awesome.min.css">
+
+<<<<<<< HEAD
+        <!--Scripts-->
+        <script src="public/js/map.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMap" async defer></script>
+        <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+        <script src="public/js/main.js"></script>
+        <script type="text/javascript" src="public/js/materialize.min.js"></script>
+=======
+    <!--Scripts-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMap" async defer></script>
+    <script src="public/js/map.js"></script>
+    <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="public/js/materialize.min.js"></script>
+    <script type="text/javascript" src="public/js/main.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.43/jquery.form-validator.min.js"></script>
+>>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
+
+</head>
+
+<body>
+
+    <!--Initialize Map - Hidden-->
+    <div id="map"></div>
+
+    <div id="wrapper">
+
+        <center>
+            <h1 id="logo" class="white-text center">LetsChill</h1>
+            <img src="public/img/icon.png">
+        </center>
+
+        <div id="login-container">
+
+            <br>
+            <br>
+            <br>
+
+            <form class="col s12">
+                <div class="row center">
+                    <div class="input-field col s12">
+                        <input id="autocomplete1" type="text" class="validate login-text white-text" placeholder="">
+                        <label for="location" class="login-text center-text">Location 1</label>
+                    </div>
+                </div>
+            </form>
+
+            <form class="col s12">
+                <div class="row center">
+                    <div class="input-field col s12 center">
+                        <input id="autocomplete2" type="text" class="validate login-text white-text" placeholder="">
+                        <label class="login-text" for="location">Location 2</label>
+                    </div>
+                </div>
+            </form>
+
+            <center>
+                <button class="btn waves-effect waves-light" type="submit" name="action" onclick="submitLocations()">Submit</button>
+            </center>
+        </div>
+    </div>
+
+
+    <footer class="page-footer black">
+
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger footer-btn" href="#modal1"><i class="fa fa-male"></i></a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal team-modal">
+            <div class="modal-content">
+                <h3 class="center-align">The Team </h3>
+                <div id="teamwrapper">
+
+                    <div id="personleft" class="center-align">
+                        <h1>Neeraj Aggarwal</h1>
+
+                        <a href="http://neerajaggarwal.com/">
+                            <img class="responsive-img circle" src="http://neerajaggarwal.com/asset/prof.jpg">
+                        <p>http://neerajaggarwal.com</p>
+                        </a>
+                        <h3>Neeraj Aggarwal is a sophomore at the Harker School, studying Computer Science and Business.</h3>
+
+                    </div>
+                    <div id="personright" class="center-align">
+                        <h1>Jason Wong</h1>
+                        <a href="http://jasonkcwong.com/">
+                            <img class="responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAS5AAAAJGM2NmVlMzAxLTYyYjktNGE0ZS1hMmQ4LTkxMzg2MTU3OTEwZg.jpg">
+                        <p>http://jasonkcwong.com</p>
+                        </a>
+                        <h3>Second year student who is passionate in integrating computer science into the technology world</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="teamwrapper">
+                    <div id="personleft" class="center-align">
+                        <h1>Alex Jordache</h1>
+
+                        <a href="http://alexjordache.me/">
+                            <img class="responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAWRAAAAJGIyYWVjMTU5LTI1NTctNGI0OS1hYzA5LWMyZDM2NjFiOGJjMg.jpg">
+                        <p>http://alexjordache.me</p>
+                        </a>
+                        <h3>Alex Jordache is a sophomore Computer Science and Business Major at UBC. He's passionate about learning,coding, and basketballin'</h3>
+                    </div>
+                    <div id="personright" class="center-align">
+                        <h1>Syed Shah</h1>
+                        <img class="responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAZxAAAAJGEyOTVjNzY1LWFmOGEtNGNjMC05ZDM1LTg3ZWRjYmQ5ZDhkNg.jpg">
+                        <h4>Pursuing graduate studies in Software Engineering with a deep passion in making computers perform tasks what humans want it to do.</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            
+            <div class="modal-footer right">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger right footer-btn" href="#modal2"><i class="fa fa-question"></i></a>
+
+        <!-- Modal Structure -->
+
+        <div id="modal2" class="modal help-modal">
+            <div class="modal-content">
+                <h4 class="center-align">Getting Started </h4>
+                <p>tbd</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> 718eeaafe97e093c1f842b15101cfa59aee84507
