@@ -8,8 +8,16 @@ html {
 }
 
 #wrapper{
-    margin-top: 7em;
+    margin-top: 4em;
     margin-bottom: auto;
+}
+
+#wrapper img {
+    display: inline-block;
+    /*margin:auto;*/
+    max-height: 10%;
+    max-width: 10%;
+    margin-bottom: -1em;
 }
 
 #login-container {
@@ -24,6 +32,7 @@ html {
 }
 
 #logo {
+    display: inline-block;
     font-family: 'Molengo', sans-serif;
     font-size: 100px;
 }

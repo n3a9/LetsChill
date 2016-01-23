@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 
     <head>
+        <title>LetsChill</title>
+        <meta charset="utf-8">
+        
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
@@ -23,7 +26,10 @@
         <script type="text/javascript" src="public/js/materialize.min.js"></script>
 
         <div id="wrapper">
-           <h1 id="logo" class="white-text center">LetsChill</h1>
+            <center>
+            <h1 id="logo" class="white-text center">LetsChill</h1>
+            <img src="public/img/icon.png">
+                </center>
             <div id="login-container">
             <br><br><br>
                     <form class="col s12">
@@ -42,7 +48,7 @@
                             </div>
                         </div>
                     </form>
-                <center><button class="btn waves-effect waves-light" type="submit" name="action">Submit</button></center>
+                <center><button class="btn waves-effect waves-light" type="submit" name="action" onclick="submitLocations()">Submit</button></center>
             </div>
         </div>
     </body>

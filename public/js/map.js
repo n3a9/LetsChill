@@ -5,6 +5,10 @@
 var map;
 var infowindow;
 
+function submitLocations(){
+    window.location.href = "results.html";
+}
+
 function initMap() {
     // Two Lat Lon
     var lat1 = -33;
@@ -18,10 +22,10 @@ function initMap() {
     console.log(midpoint);
 
     // Adds AutoComplete for input
-    //map = new google.maps.Map(document.getElementById('map'), {
-    //    center: midpointCoords,
-    //    zoom: 15
-    //});
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: midpointCoords,
+        zoom: 15
+    });
     
     var input1 = document.getElementById('autocomplete1');
     
@@ -29,7 +33,6 @@ function initMap() {
     var autocomplete1 = new google.maps.places.Autocomplete(input1);
     
     var input2 = document.getElementById('autocomplete2');
-    
     
     var autocomplete2 = new google.maps.places.Autocomplete(input2);
 
