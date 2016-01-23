@@ -1,41 +1,36 @@
-#content {
+html {
     background: url(http://res.cloudinary.com/dz9yrk0yr/image/upload/v1453532137/blurred-city-lights-widescreen_wallpaper_lthfds.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    z-index: 0 !important; 
+    z-index: 0 !important;
+}
+
+#wrapper{
+    margin-top: 7em;
+    margin-bottom: auto;
 }
 
 #login-container {
-    z-index: 1 !important;
+    width:70%;
     border-radius: 40px;
     background-color: rgba(0,0,0,0.5);
-    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    padding-bottom: 6em;
-    
+    padding-bottom: 2em;
 }
 
 #logo {
-    margin-top: 2.7em;
-    z-index: 2 !important;
     font-family: 'Molengo', sans-serif;
-    font-size: 100px; 
-
-    
-    
+    font-size: 100px;
 }
 
 #login-container label {
- 
-margin-left: 5%; 
- 
- font-size: 25px;
-
+    margin-left: 5%; 
+    font-size: 25px;
 }
 
 #email {
