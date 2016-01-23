@@ -33,11 +33,9 @@ html {
     font-size: 25px;
 }
 
-#email {
-
+#autocomplete1, #autocomplete2 {
     font-size: 2em;
     width: 90%;
-    
     
 }
 
@@ -91,6 +89,13 @@ html {
    .input-field .prefix.active {
      color: #000;
    }
+
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
 
 @media only screen and (max-width : 380px) {
     #logo {

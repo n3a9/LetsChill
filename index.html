@@ -10,10 +10,11 @@
         <link type="text/css" rel="stylesheet" href="public/css/main.css" />
         <!--Capture Viewport-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!--Google Maps API-->
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <!-- fonts --> 
         <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMap" async defer></script>
+        <script src="public/js/map.js"></script>
+        
     </head>
 
     <body>
@@ -28,7 +29,7 @@
                     <form class="col s12">
                         <div class="row center">
                             <div class="input-field col s12">
-                                <input id="email" type="email" class="validate login-text white-text">
+                                <input id="autocomplete1" type="email" class="validate login-text white-text" placeholder="Location 1">
                                 <label for="email"  class="login-text center-text">Location 1</label>
                             </div>
                         </div>
@@ -36,16 +37,14 @@
                     <form class="col s12">
                         <div class="row center">
                             <div class="input-field col s12 center">
-                                <input id="email" type="email" class="validate login-text white-text">
+                                <input id="autocomplete2" type="email" class="validate login-text white-text">
                                 <label class="login-text" for="email">Location 2</label>
                             </div>
                         </div>
                     </form>
+                <center><button class="btn waves-effect waves-light" type="submit" name="action">Submit</button></center>
             </div>
         </div>
-
-        <script type="text/javascript" src="public/app/app.js"></script>
-
     </body>
 
 </html>
