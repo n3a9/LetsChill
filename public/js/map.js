@@ -190,6 +190,28 @@ function callback(results, status) {
         }
         document.getElementById('locations-wrapper').innerHTML = html;
     }
+
+}
+
+function formatType(type){
+    if(!(type.indexOf("_") > -1)){
+        return type.charAt(0).toUpperCase() + type.slice(1);
+    } else {
+        var arr = [];
+//        var replaced = type.replace('_', ' ');
+        var words = type.split('_');
+        var string = "";
+        for (var i = 0; i < words.length; i++){
+            if (i != 0){
+                string += " ";
+            }
+            string += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        console.log(string);
+        return string;
+        
+    }
+
 }
 
 
