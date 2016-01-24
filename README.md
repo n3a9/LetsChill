@@ -8,7 +8,10 @@ Developed @ HackArizona 2016
 ##Installation and Usage
 Hosted at [http://aggarwalneeraj141.github.io/LetsChill/](http://aggarwalneeraj141.github.io/LetsChill/)
 
-To install and run, download repository and run ```open index.html```. Note: this is a static web application.
+To install and run, download repository and run ```open index.html```. Note: this is a static web application. If successful, browser will open with this:
+
+![screen shot 2016-01-24 at 1 29 24 am](https://cloud.githubusercontent.com/assets/7104017/12535240/00cc1e90-c23a-11e5-9e63-5236f614af7a.jpg)
+
 
 ##APIs Used
 Google Places API and Google Maps API
