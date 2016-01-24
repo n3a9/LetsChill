@@ -8,19 +8,65 @@
     float: left;
     height: 100%;
     width: 40%;
-
 }
 
 #filters {
     padding-left: 30px;
-    height: 30%;
+    height: 20%;
     width: 100%;
 }
 
 #recommendations {
-    
-    height: 70%;
+    background: url(https://scontent-ord1-1.xx.fbcdn.net/hphotos-xpf1/v/l/t34.0-12/12625701_1540710349574875_1299213664_n.jpg?oh=9dc128bc4e6da31cbe742316f77b6f07&oe=56A71E72) no-repeat;
+    height: 80%;
     width: 100%;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#recommendations-card {
     
+    height: 90%;
+    width: 80%;
+    
+}
+
+#left-results {
+    width: 50%;
+    float: left;
+    height: 30%; 
+}
+
+#left-results h1{
+    font-size:26pt;
+}
+
+#left-results h3{
+    margin-top: -.5em;
+    font-size:22pt;
+}
+
+#right-results h4{
+    margin-top: 1em;
+    font-size:24pt;
+}
+
+#right-results {
+    width: 50%;
+    float: right;
+    height: 30%; 
+}
+
+.locations-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
     
 }

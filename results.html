@@ -9,14 +9,14 @@
 
     <link type="text/css" rel="stylesheet" href="public/css/results.css" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="public/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="public/css/materialize-v2.css" media="screen,projection" />
     <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
 
     <title>LetsChill-Results</title>
 
     <!--Scripts-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMaptwo" async defer></script>
     <script src="public/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMaptwo" async defer></script>
     <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="public/js/materialize.min.js"></script>
 
@@ -32,53 +32,87 @@
 
 <body>
 
-    
+
 
     <div id="map" class="map-container"></div>
-        
-    
 
-        
+
+
+
     <div class="right-view">
-        
-    <div id="recommendations" class="black">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> </div>
+
+        <div id="recommendations" class="black">
+            <br>
+            <br>
+
+            <div id="recommendations-card" class="container white z-depth-5 ">
+
+                <div class="locations-container">
+
+                    <!--FIRST LOCATION JASON this the first input-->
+                    <div class="locations-wrapper"> 
+                    <div id="left-results">
+                        <h1 class="name black-text"> test name </h1>
+                        <h3 class="type black-text"> test type </h3>
+                    </div>
+                    <div id="right-results">
+                        <h4 class="address black-text"> test address </h4>
+                    </div>
+                    </div>
+                    
+                    <div class="locations-wrapper"> 
+                    <div id="left-results">
+                        <h1 class="name black-text"> test name </h1>
+                        <h3 class="type black-text"> test type </h3>
+                    </div>
+                    <div id="right-results">
+                        <h4 class="address black-text"> test address </h4>
+                    </div>
+                    </div>
+                    
+
+                    
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
 
 
 
 
-    <form action="" id="filters">
-        <input class="checkitem" type="checkbox" name="amusement_park" onclick="checkedUpdate()"> Amusement Park
-        <br>
-        <input class="checkitem" type="checkbox" name="aquarium" onclick="checkedUpdate()"> Aquarium
-        <br>
-        <input class="checkitem" type="checkbox" name="bank" onclick="checkedUpdate()"> Bank
-        <br>
-        <input class="checkitem" type="checkbox" name="bowling_alley" onclick="checkedUpdate()"> Bowling Alley
-        <br>
-        <input class="checkitem" type="checkbox" name="cafe" onclick="checkedUpdate()"> Cafe
-        <br>
-        <input class="checkitem" type="checkbox" name="food" onclick="checkedUpdate()"> Food
-        <br>
-        <input class="checkitem" type="checkbox" name="gym" onclick="checkedUpdate()"> Gym
-        <br>
-        <input class="checkitem" type="checkbox" name="movie_theater" onclick="checkedUpdate()"> Movie Theater
-        <br>
-        <input class="checkitem" type="checkbox" name="restaurant" onclick="checkedUpdate()"> Restaurant
-        <br>
-        <input class="checkitem" type="checkbox" name="shopping_mall" onclick="checkedUpdate()"> Shopping Mall
-        <br>
-        <input class="checkitem" type="checkbox" name="spa" onclick="checkedUpdate()"> Spa
-        <br>
-        <input class="checkitem" type="checkbox" name="zoo" onclick="checkedUpdate()"> Zoo
-        <br>
-    </form>
-    
-     </div>    
+        <form action="" id="filters">
+            <input class="checkitem" type="checkbox" name="amusement_park" onclick="checkedUpdate()"> Amusement Park
+            <br>
+            <input class="checkitem" type="checkbox" name="aquarium" onclick="checkedUpdate()"> Aquarium
+            <br>
+            <input class="checkitem" type="checkbox" name="bank" onclick="checkedUpdate()"> Bank
+            <br>
+            <input class="checkitem" type="checkbox" name="bowling_alley" onclick="checkedUpdate()"> Bowling Alley
+            <br>
+            <input class="checkitem" type="checkbox" name="cafe" onclick="checkedUpdate()"> Cafe
+            <br>
+            <input class="checkitem" type="checkbox" name="food" onclick="checkedUpdate()"> Food
+            <br>
+            <input class="checkitem" type="checkbox" name="gym" onclick="checkedUpdate()"> Gym
+            <br>
+            <input class="checkitem" type="checkbox" name="movie_theater" onclick="checkedUpdate()"> Movie Theater
+            <br>
+            <input class="checkitem" type="checkbox" name="restaurant" onclick="checkedUpdate()"> Restaurant
+            <br>
+            <input class="checkitem" type="checkbox" name="shopping_mall" onclick="checkedUpdate()"> Shopping Mall
+            <br>
+            <input class="checkitem" type="checkbox" name="spa" onclick="checkedUpdate()"> Spa
+            <br>
+            <input class="checkitem" type="checkbox" name="zoo" onclick="checkedUpdate()"> Zoo
+            <br>
+        </form>
+
+    </div>
 
 </body>
 
