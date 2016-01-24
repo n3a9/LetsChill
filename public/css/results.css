@@ -32,43 +32,41 @@
 }
 
 #recommendations-card {
-    
     height: 90%;
     width: 80%;
-    
 }
 
 #left-results {
     width: 50%;
     float: left;
-    height: 30%; 
+    height: 30%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#left-results h1{
+#left-results h1 {
     margin-left: auto;
     margin-right: auto;
-    font-size:20pt;
+    font-size: 20pt;
 }
 
-#left-results h3{
+#left-results h3 {
     margin-top: -.5em;
-    font-size:16pt;
+    font-size: 16pt;
 }
 
-#right-results h4{
+#right-results h4 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
-    font-size:18pt;
+    font-size: 18pt;
 }
 
 #right-results {
     width: 50%;
     float: right;
     height: 30%;
-        margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -77,7 +75,46 @@
     margin-right: auto;
 }
 
-.locations-wrapper{
-    display:inline-block;
+.locations-wrapper {
+    display: inline-block;
     margin-bottom: -2.5em;
+}
+
+input[type=checkbox].css-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left: 35px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -30px;
+}
+
+label.css-label {
+    background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_4b2d86788a4070fb5cd10ff407a4ed28.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
