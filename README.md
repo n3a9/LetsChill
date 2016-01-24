@@ -5,8 +5,10 @@ A web app to find a meetup location for two people in a local area. Given two lo
 
 Developed @ HackArizona 2016
 
-##Usage
+##Installation and Usage
 Hosted at [http://aggarwalneeraj141.github.io/LetsChill/](http://aggarwalneeraj141.github.io/LetsChill/)
+
+To install and run, download repository and run ```open index.html```. Note: this is a static web application.
 
 ##APIs Used
 Google Places API and Google Maps API
