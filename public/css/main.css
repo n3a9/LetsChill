@@ -129,6 +129,12 @@ html {
     
 }
 
+#map {
+    width: 60% !important;
+    height: 50%;
+    
+}
+
 
 /*TEXT HANDLING AND COLORS*/
 

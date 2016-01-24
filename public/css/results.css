@@ -1,0 +1,26 @@
+#map {
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.right-view {
+    float: left;
+    height: 100%;
+    width: 40%;
+
+}
+
+#filters {
+    padding-left: 30px;
+    height: 30%;
+    width: 100%;
+}
+
+#recommendations {
+    
+    height: 70%;
+    width: 100%;
+    
+    
+}
