@@ -140,6 +140,8 @@ function initMaptwo() {
     var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
     
     console.log(midpointCoords);
+    
+    infowindow = new google.maps.InfoWindow();
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: midpointCoords,
