@@ -1,7 +1,7 @@
 #LetsChill
 A web app to find a meetup location for two people in a local area. Given two locations, it will find options in between them that can be used to meet up such as cafes, mini golf, and other options.
 
-
+![out](https://cloud.githubusercontent.com/assets/7104017/12536194/27a64e98-c25b-11e5-9764-bd8ee6e3aeba.gif)
 
 Developed @ HackArizona 2016
 
