@@ -156,13 +156,34 @@ function initMaptwo() {
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+        var html = "<tr><th>Name</th><th>Location</th><th>Types</th></tr>";
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
 //          console.log(results[i]);
+            html += "<tr><td>" + results[i].name + "</td><td>" + results[i].vicinity + "</td>";
+            //<td>" + results[i].types + "</td>";
+            if (results[i].types.length > 0){
+                var start = "<td>";
+                html += start;
+            }
+            for (var k = 0; k < results[i].types.length; k++){
+                if (k == results[i].types.length - 1){
+                    html += results[i].types[k] + "</td>";
+                } else {
+                    html += results[i].types[k] + ", ";
+                }
+
+            }
+            
+            end = "</tr>";
+            
+            html += end;
             console.log(results[i].name); //get name
             console.log(results[i].vicinity);
             console.log(results[i].types);
         }
+        console.log(html);
+        document.getElementById('table').innerHTML = html;
     }
 }
 
@@ -182,6 +203,8 @@ function createMarker(place) {
 
 function clearMarkers() {
     setMapOnAll(null);
+    var html = "<tr><th>Name</th><th>Location</th><th>Types</th></tr>";
+    document.getElementById('table').innerHTML = html;
 }
 function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
@@ -206,6 +229,8 @@ function getMidpoint(lat1, lng1, lat2, lng2) {
     lon3 = lng1 + Math.atan2(by, Math.cos(lat1) + bx);
     return [Math.degrees(lat3), Math.degrees(lon3)]
 }
+
+
 function checkedUpdate() {
     // Retrieve the checked radiobuttons
     var checkedArr = [];
