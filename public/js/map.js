@@ -158,13 +158,41 @@ function initMaptwo() {
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+        var html = "";
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
+            html += "<div class='locations-wrapper'><div id='left-results'><h1 class='name black-text'>" + results[i].name + "</h1>"
 //          console.log(results[i]);
+            if (results[i].types.length > 0){
+                var start = "<h3 class='type black-text'>";
+                html += start;
+            }
+            var types = "";
+            for (var k = 0; k < results[i].types.length; k++){
+                if (k == results[i].types.length - 1){
+                    types += results[i].types[k];
+                    html += types + "</h3></div>";
+                } else {
+                    types += results[i].types[k] + ", ";
+                }
+
+            }
+            html += "<div id='right-results'><h4 class='address black-text'>" + results[i].vicinity + "</h4>";
+            
+            html += "</div></div>";
+            
+            
+//                        <h3 class="type black-text"> test type </h3>
+//                        </div>
+//                        <div id="right-results">
+//                            <h4 class="address black-text"> test address </h4>
+//                        </div>
+//                    </div>
             console.log(results[i].name); //get name
             console.log(results[i].vicinity);
             console.log(results[i].types);
         }
+        document.getElementById('locations-wrapper').innerHTML = html;
     }
 }
 

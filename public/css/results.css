@@ -42,31 +42,42 @@
     width: 50%;
     float: left;
     height: 30%; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #left-results h1{
-    font-size:26pt;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:20pt;
 }
 
 #left-results h3{
     margin-top: -.5em;
-    font-size:22pt;
+    font-size:16pt;
 }
 
 #right-results h4{
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1em;
-    font-size:24pt;
+    font-size:18pt;
 }
 
 #right-results {
     width: 50%;
     float: right;
-    height: 30%; 
+    height: 30%;
+        margin-left: auto;
+    margin-right: auto;
 }
 
 .locations-container {
     margin-left: auto;
     margin-right: auto;
-    width: 90%; 
-    
+}
+
+.locations-wrapper{
+    display:inline-block;
+    margin-bottom: -2.5em;
 }
