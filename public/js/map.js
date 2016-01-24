@@ -212,6 +212,8 @@ function createMarker(place) {
 
 function clearMarkers() {
     setMapOnAll(null);
+    var html = "";
+    document.getElementById('locations-wrapper').innerHTML = html;
 }
 function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
