@@ -14,7 +14,7 @@ To install and run, download repository and run ```open index.html```. Note: thi
 
 
 ##Technologies Used
-**Frontend:** HTML5, CSS3, Materialize, Javascript, jQuery
+**Frontend:** HTML5, CSS3, Google Material Design, Javascript, jQuery
 
 **Backend:** Google Places API, Google Maps API
 
