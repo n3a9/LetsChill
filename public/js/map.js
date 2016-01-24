@@ -170,10 +170,12 @@ function callback(results, status) {
             var types = "";
             for (var k = 0; k < results[i].types.length; k++){
                 if (k == results[i].types.length - 1){
-                    types += results[i].types[k];
+                    var type = formatType(results[i].types[k]);
+                    types += type;
                     html += types + "</h3></div>";
                 } else {
-                    types += results[i].types[k] + ", ";
+                    var type = formatType(results[i].types[k]);
+                    types += type + ", ";
                 }
 
             }
@@ -182,18 +184,34 @@ function callback(results, status) {
             html += "</div></div>";
             
             
-//                        <h3 class="type black-text"> test type </h3>
-//                        </div>
-//                        <div id="right-results">
-//                            <h4 class="address black-text"> test address </h4>
-//                        </div>
-//                    </div>
             console.log(results[i].name); //get name
             console.log(results[i].vicinity);
             console.log(results[i].types);
         }
         document.getElementById('locations-wrapper').innerHTML = html;
     }
+
+}
+
+function formatType(type){
+    if(!(type.indexOf("_") > -1)){
+        return type.charAt(0).toUpperCase() + type.slice(1);
+    } else {
+        var arr = [];
+//        var replaced = type.replace('_', ' ');
+        var words = type.split('_');
+        var string = "";
+        for (var i = 0; i < words.length; i++){
+            if (i != 0){
+                string += " ";
+            }
+            string += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        console.log(string);
+        return string;
+        
+    }
+
 }
 
 function createMarker(place) {
