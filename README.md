@@ -13,8 +13,9 @@ To install and run, download repository and run ```open index.html```. Note: thi
 ![screen shot 2016-01-24 at 1 29 24 am](https://cloud.githubusercontent.com/assets/7104017/12535240/00cc1e90-c23a-11e5-9e63-5236f614af7a.jpg)
 
 
-##APIs Used
-Google Places API and Google Maps API
+##Technologies Used
+**Frontend:** HTML5, CSS3, Materialize, Javascript, jQuery
+**Backend:** Google Places API, Google Maps API
 
 ##Contribute
 1. **Fork and clone repository**: Fork and clone the repository to your own profile.
