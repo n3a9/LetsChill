@@ -16,7 +16,7 @@ To install and run, download repository and run ```open index.html```. Note: thi
 ##Technologies Used
 **Frontend:** HTML5, CSS3, Google Material Design, Javascript, jQuery
 
-**Backend:** Google Places API, Google Maps API
+**Backend:** Google AutoComplete API, Google Places API, Google Maps API
 
 ##Contribute
 1. **Fork and clone repository**: Fork and clone the repository to your own profile.
