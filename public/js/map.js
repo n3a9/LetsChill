@@ -9,6 +9,7 @@ var input2;
 var autocomplete1;
 var autocomplete2;
 var lat1;
+var radius;
 var lon1;
 var lat2;
 var lon2;
@@ -17,7 +18,7 @@ var markers = [];
 function submitLocations(){
     if (input1.value==""||input2.value=="")
         {
-            alert("One or more locations is empty!");
+            alert("One or more fields is empty!");
             return;
         }
       autocomplete1.addListener('place_changed', function() {
@@ -62,8 +63,10 @@ function submitLocations(){
     var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
     
     console.log(midpoint[0]);
-    
+
+    radius = document.getElementById('radius').value;
     localStorage.setItem("mdpt", midpoint);
+    localStorage.setItem("radius", radius);
     window.location.href = "results.html";
 }
 
@@ -74,6 +77,7 @@ function initMap() {
     
     input2 = document.getElementById('autocomplete2');
     autocomplete2 = new google.maps.places.Autocomplete(input2);
+
 
     infowindow = new google.maps.InfoWindow();
     
@@ -129,7 +133,7 @@ function initMap() {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500
+        radius: localStorage.getItem("radius")
     }, callback);
     
 }
@@ -148,10 +152,12 @@ function initMaptwo() {
         zoom: 15
     });
 
+    console.log("here");
+    console.log(localStorage.getItem("radius").value);
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500
+        radius: localStorage.getItem("radius")
     }, callback);
     
 }
@@ -309,7 +315,7 @@ function checkedUpdate() {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500,
+        radius: localStorage.getItem("radius"),
         types: checkedArr
     }, callback);
     
