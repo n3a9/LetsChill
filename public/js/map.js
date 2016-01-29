@@ -21,43 +21,54 @@ function submitLocations(){
             alert("One or more fields is empty!");
             return;
         }
-      autocomplete1.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete1.getPlace();
+    //   autocomplete1.addListener('place_changed', function() {
+    //     infowindow.close();
+    //     var place = autocomplete1.getPlace();
       
-        if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-        }
-        console.log(place);
+    //     if (!place.geometry) {
+    //         window.alert("Autocomplete's returned place contains no geometry");
+    //         return;
+    //     }
+    //     console.log(place);
         
-        console.log(place.name);
+    //     console.log(place.name);
         
-        lat1=place.geometry.location.lat();
+    //     lat1=place.geometry.location.lat();
         
-        lon1=place.geometry.location.lng();
+    //     lon1=place.geometry.location.lng();
           
 
 
-    });
-    
-    autocomplete2.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete2.getPlace();
-      
-        if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-        }
-        console.log(place);
-        
-        console.log(place.name);
-        
-        lat2=place.geometry.location.lat();
-        
-        lon2=place.geometry.location.lng();
+    // });
 
-    });
+    var place1 = autocomplete1.getPlace();
+    lat1=place1.geometry.location.lat();
+        
+    lon1=place1.geometry.location.lng();
+
+    var place2 = autocomplete2.getPlace();
+    
+    lat2=place2.geometry.location.lat();
+        
+    lon2=place2.geometry.location.lng();
+    
+    // autocomplete2.addListener('place_changed', function() {
+    //     infowindow.close();
+    //     var place = autocomplete2.getPlace();
+      
+    //     if (!place.geometry) {
+    //         window.alert("Autocomplete's returned place contains no geometry");
+    //         return;
+    //     }
+    //     console.log(place);
+        
+    //     console.log(place.name);
+        
+    //     lat2=place.geometry.location.lat();
+        
+    //     lon2=place.geometry.location.lng();
+
+    // });
     
     var midpoint = getMidpoint(lat1, lon1, lat2, lon2)
     var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
@@ -79,62 +90,62 @@ function initMap() {
     autocomplete2 = new google.maps.places.Autocomplete(input2);
 
 
-    infowindow = new google.maps.InfoWindow();
+    // infowindow = new google.maps.InfoWindow();
     
-    autocomplete1.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete1.getPlace();
+    // autocomplete1.addListener('place_changed', function() {
+    //     infowindow.close();
+    //     var place = autocomplete1.getPlace();
       
-        if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-        }
-        console.log(place);
+    //     if (!place.geometry) {
+    //         window.alert("Autocomplete's returned place contains no geometry");
+    //         return;
+    //     }
+    //     console.log(place);
         
-        console.log(place.name);
+    //     console.log(place.name);
         
-        lat1=place.geometry.location.lat();
+    //     lat1=place.geometry.location.lat();
         
-        lon1=place.geometry.location.lng();
+    //     lon1=place.geometry.location.lng();
         
-                  console.log(lat1);
-          console.log(lon1);
+    //               console.log(lat1);
+    //       console.log(lon1);
 
-    });
+    // });
     
-    autocomplete2.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete2.getPlace();
+    // autocomplete2.addListener('place_changed', function() {
+    //     infowindow.close();
+    //     var place = autocomplete2.getPlace();
       
-        if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-        }
-        console.log(place);
+    //     if (!place.geometry) {
+    //         window.alert("Autocomplete's returned place contains no geometry");
+    //         return;
+    //     }
+    //     console.log(place);
         
-        console.log(place.name);
+    //     console.log(place.name);
         
-        lat2=place.geometry.location.lat();
+    //     lat2=place.geometry.location.lat();
         
-        lon2=place.geometry.location.lng();
-        console.log(lat2);
-        console.log(lon2);
+    //     lon2=place.geometry.location.lng();
+    //     console.log(lat2);
+    //     console.log(lon2);
 
-    });
+    // });
     
-    var midpoint = getMidpoint(lat1, lon1, lat2, lon2);
-    var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
+    // var midpoint = getMidpoint(lat1, lon1, lat2, lon2);
+    // var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: midpointCoords,
-        zoom: 15
-    });
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //     center: midpointCoords,
+    //     zoom: 15
+    // });
 
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-        location: midpointCoords,
-        radius: localStorage.getItem("radius")
-    }, callback);
+    // var service = new google.maps.places.PlacesService(map);
+    // service.nearbySearch({
+    //     location: midpointCoords,
+    //     radius: localStorage.getItem("radius")
+    // }, callback);
     
 }
 
