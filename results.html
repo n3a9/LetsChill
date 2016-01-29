@@ -1,68 +1,145 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="public/img/icon.png">
-        
-        <title>LetsChill-Results</title>
-        
-        <!--Scripts-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMaptwo" async defer></script>
-        <script src="public/js/map.js"></script>
-        <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="public/js/materialize.min.js"></script>
-        
-        <style>
-        html, body {
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="public/img/icon.png">
+
+    <link type="text/css" rel="stylesheet" href="public/css/results.css" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="public/css/materialize-v2.css" media="screen,projection" />
+    <link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+
+    <title>LetsChill-Results</title>
+
+    <!--Scripts-->
+    <script src="public/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbPlMeybVK5j9-cKBQ3IWVp1wOgAvCH_k&signed_in=true&libraries=places&callback=initMaptwo" async defer></script>
+    <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="public/js/materialize.min.js"></script>
+
+    <style>
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
-            }
-        #map {
-            height: 50%;
+            overflow-y: hidden;
         }
-        </style>
-    </head>
-    
-    <body>
-        <div id="map"></div>
-            <form action="">
-                <input class= "checkitem" type="checkbox" name="amusement_park" onclick="checkedUpdate()"> Amusement Park<br>
-                <input class= "checkitem" type="checkbox" name="aquarium" onclick="checkedUpdate()"> Aquarium<br>
-                <input class= "checkitem" type="checkbox" name="bank" onclick="checkedUpdate()"> Bank<br>
-                <input class= "checkitem" type="checkbox" name="bowling_alley" onclick="checkedUpdate()"> Bowling Alley<br>
-                <input class= "checkitem" type="checkbox" name="cafe" onclick="checkedUpdate()"> Cafe<br>
-                <input class= "checkitem" type="checkbox" name="food" onclick="checkedUpdate()"> Food<br>
-                <input class= "checkitem" type="checkbox" name="gym" onclick="checkedUpdate()"> Gym<br>
-                <input class= "checkitem" type="checkbox" name="movie_theatre" onclick="checkedUpdate()"> Movie Theatre<br>
-                <input class= "checkitem" type="checkbox" name="restaurant" onclick="checkedUpdate()"> Restaurant<br>
-                <input class= "checkitem" type="checkbox" name="shopping_mall" onclick="checkedUpdate()"> Shopping Mall<br>
-                <input class= "checkitem" type="checkbox" name="spa" onclick="checkedUpdate()"> Spa<br>
-                <input class= "checkitem" type="checkbox" name="zoo" onclick="checkedUpdate()"> Zoo<br>
-            </form>
+    </style>
+</head>
 
-    </body>
-    
-    <script>
-        $(document).ready(function() {
-            var makeRadiosDeselectableByName = function(name){
-                $('input[name=' + name + ']').click(function() {
-                    if($(this).attr('previousValue') == 'true'){
-                        $(this).attr('checked', false)
-                    } else {
-                        $('input[name=' + name + ']').attr('previousValue', false);
-                    }
-        
-                    $(this).attr('previousValue', $(this).attr('checked'));
-                });
-            };
+<body>
 
 
-            makeRadiosDeselectableByName('foo');
-        });
-    </script>
+
+    <div id="map" class="map-container"></div>
+
+    <div class="right-view">
+
+        <div id="recommendations" class="black">
+            <br>
+
+            <div id="recommendations-card" class="container white z-depth-5 ">
+
+                <div class="locations-container">
+
+                    <!--FIRST LOCATION JASON this the first input-->
+                    <div id="locations-wrapper">
+                        <div id="left-results">
+                            <center><h1 class="name black-text"></h1></center>
+                        </div>
+                        <div id="right-results">
+                            <center><h4 class="address black-text"></h4></center>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <form action="" id="filters">
+
+            <div class="row">
+
+                <div class="col s4 m4 l4">
+
+                    <input id="amusement-park" class="css-checkbox checkitem" type="checkbox" name="amusement_park" onclick="checkedUpdate()">
+                    <label for="amusement-park" class="css-label black-text">Amusement Park</label>
+                    <br>
+                    <br>
+                    <input id="aquarium" class="css-checkbox checkitem" type="checkbox" name="aquarium" onclick="checkedUpdate()">
+                    <label for="aquarium" class="css-label black-text">Aquarium</label>
+                    <br>
+                    <br>
+                    <input id="bank" class="css-checkbox checkitem" type="checkbox" name="bank" onclick="checkedUpdate()">
+                    <label for="bank" class="css-label black-text">Bank</label>
+                    <br>
+                    <br>
+                    <input id="bowling-alley" class="css-checkbox checkitem" type="checkbox" name="bowling_alley" onclick="checkedUpdate()"> <label for="bowling-alley" class="css-label black-text">Bowling Alley</label>
+                    <br>
+                    <br>
+                    
+                </div>
+
+                
+<div class="col s4 m4 l4">
+                    <input id="gym" class="css-checkbox checkitem" type="checkbox" name="gym" onclick="checkedUpdate()"> 
+                    <label for="gym" class="css-label black-text">Gym</label>
+                    <br>
+                    <br>
+                    <input id="movie-theater" class="css-checkbox checkitem" type="checkbox" name="movie_theater" onclick="checkedUpdate()"> 
+                    <label for="movie-theater" class="css-label black-text">Movie Theater</label>
+                    <br>
+                    <br>
+                    <input id="restaurant" class="css-checkbox checkitem" type="checkbox" name="restaurant" onclick="checkedUpdate()"> 
+                    <label for="restaurant" class="css-label black-text">Restaurant</label>
+                    <br>
+    <br>    
+                    <input id="shopping-mall" class="css-checkbox checkitem" type="checkbox" name="shopping_mall" onclick="checkedUpdate()">
+                    <label for="shopping-mall" class="css-label black-text">Shopping Mall</label>
+                    <br>
+    <br>
+                </div>
+                    
+
+                
+                <div class="col s4 m4 l4">
+                <input id="cafe" class="css-checkbox checkitem" type="checkbox" name="cafe" onclick="checkedUpdate()">
+                    <label for="cafe" class="css-label black-text">Cafe</label>
+                    <br>
+                    <br>
+                    <input id="food" class="css-checkbox checkitem" type="checkbox" name="food" onclick="checkedUpdate()">
+                    <label for="food" class="css-label black-text">Food</label>
+                    <br>
+                    <br>
+                <input id="spa" class="css-checkbox checkitem" type="checkbox" name="spa" onclick="checkedUpdate()"> 
+                    <label for="spa" class="css-label black-text">Spa</label>
+                    <br>
+                    <br>
+                    <input id="zoo" class="css-checkbox checkitem" type="checkbox" name="zoo" onclick="checkedUpdate()"> 
+                    <label for="zoo" class="css-label black-text">Zoo</label>
+                    <br>
+                    <br>
+            </div>
+                </div>
+
+        </form>
+
+    </div>
+
+</body>
+
 
 </html>

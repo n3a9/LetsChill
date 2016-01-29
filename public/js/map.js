@@ -9,6 +9,7 @@ var input2;
 var autocomplete1;
 var autocomplete2;
 var lat1;
+var radius;
 var lon1;
 var lat2;
 var lon2;
@@ -17,7 +18,7 @@ var markers = [];
 function submitLocations(){
     if (input1.value==""||input2.value=="")
         {
-            alert("One or more locations is empty!");
+            alert("One or more fields is empty!");
             return;
         }
       autocomplete1.addListener('place_changed', function() {
@@ -62,8 +63,10 @@ function submitLocations(){
     var midpointCoords = {lat: midpoint[0], lng: midpoint[1]};
     
     console.log(midpoint[0]);
-    
+
+    radius = document.getElementById('radius').value;
     localStorage.setItem("mdpt", midpoint);
+    localStorage.setItem("radius", radius);
     window.location.href = "results.html";
 }
 
@@ -74,6 +77,7 @@ function initMap() {
     
     input2 = document.getElementById('autocomplete2');
     autocomplete2 = new google.maps.places.Autocomplete(input2);
+
 
     infowindow = new google.maps.InfoWindow();
     
@@ -129,7 +133,7 @@ function initMap() {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500
+        radius: localStorage.getItem("radius")
     }, callback);
     
 }
@@ -140,31 +144,70 @@ function initMaptwo() {
     var midpointCoords = {lat: parseFloat(midpoint.substr(0,n)), lng: parseFloat(midpoint.substr(n+1,midpoint.length-1))};
     
     console.log(midpointCoords);
+    
+    infowindow = new google.maps.InfoWindow(); 
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: midpointCoords,
         zoom: 15
     });
 
+    console.log("here");
+    console.log(localStorage.getItem("radius").value);
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500
+        radius: localStorage.getItem("radius")
     }, callback);
     
 }
 
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-//          console.log(results[i]);
-            console.log(results[i].name); //get name
-            console.log(results[i].vicinity);
-            console.log(results[i].types);
+        var html = "";
+        for (var i = 1; i < results.length; i++) {
+            if (results[i].name != results[i].vicinity) {
+                createMarker(results[i]);
+                html += "<div class='locations-wrapper'><div id='left-results'><h1 class='name black-text col s6'>" + results[i].name + "</h1>";
+                html += "</div>";
+                html += "<div id='right-results'><h4 class='address black-text col s6'>" + results[i].vicinity + "</h4>";
+                
+                html += "</div></div>";
+                
+                
+                console.log(results[i].name); //get name
+                console.log(results[i].vicinity);
+                console.log(results[i].types);
+            }
+                
         }
+        document.getElementById('locations-wrapper').innerHTML = html;
     }
+
 }
+
+function formatType(type){
+    if(!(type.indexOf("_") > -1)){
+        return type.charAt(0).toUpperCase() + type.slice(1);
+    } else {
+        var arr = [];
+//        var replaced = type.replace('_', ' ');
+        var words = type.split('_');
+        var string = "";
+        for (var i = 0; i < words.length; i++){
+            if (i != 0){
+                string += " ";
+            }
+            string += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        console.log(string);
+        return string;
+        
+    }
+
+}
+
+
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;
@@ -180,8 +223,13 @@ function createMarker(place) {
     markers.push(marker);
 }
 
+
+
+
 function clearMarkers() {
     setMapOnAll(null);
+    var html = "";
+    document.getElementById('locations-wrapper').innerHTML = html;
 }
 function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
@@ -234,7 +282,7 @@ function checkedUpdate() {
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: midpointCoords,
-        radius: 500,
+        radius: localStorage.getItem("radius"),
         types: checkedArr
     }, callback);
     
