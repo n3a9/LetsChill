@@ -1,0 +1,123 @@
+#map {
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.right-view {
+    float: left;
+    height: 100%;
+    width: 40%;
+}
+
+#filters {
+    width: 100%;
+    margin-left: 7.25%;
+    height: 30%;
+    padding-top: .6em;
+    
+}
+
+#recommendations {
+    background: url(https://scontent-ord1-1.xx.fbcdn.net/hphotos-xpf1/v/l/t34.0-12/12625701_1540710349574875_1299213664_n.jpg?oh=9dc128bc4e6da31cbe742316f77b6f07&oe=56A71E72) no-repeat;
+    height: 70%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#recommendations-card {
+    height: 90%;
+    width: 80%;
+}
+
+#left-results {
+    width: 50%;
+    float: left;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+#left-results h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12pt;
+    vertical-align: middle;
+}
+
+#right-results {
+    width: 50%;
+    float:right;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .75em;
+}
+
+#right-results h4 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .75em;
+    font-size: 12pt;
+}
+
+.locations-container {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+    height:100%;
+    width: 95%;
+}
+
+.locations-wrapper {
+    display:inline-block;
+    margin-bottom: -2.5em;
+}
+
+input[type=checkbox].css-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: .25px;
+    width: .25px;
+    margin: -1px;
+    padding-bottom: 0;
+    border: 0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left: 35px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 12px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -30px;
+}
+
+label.css-label {
+    background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_4b2d86788a4070fb5cd10ff407a4ed28.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
